@@ -80,9 +80,24 @@ engines.tk-motionbuilder.location:
 
 # Nuke
 engines.tk-nuke.location:
-  type: app_store
-  name: tk-nuke
-  version: v0.13.0
+  ### App Store
+   name: tk-nuke
+   type: app_store
+   version: v0.13.0
+  ## Dev
+  #name: tk-nuke
+  # type: dev
+  # path: ~/Documents/Github/tk-nuke
+  ### Github Release
+  # type: github_release
+  # organization: c1112
+  # repository: tk-nuke
+  # version: v0.13.0-3b.1
+  ### Toolkit Component Entity
+  # type: shotgun
+  # entity_type: CustomNonProjectEntity13
+  # field: sg_uploaded_app
+  # version: 41282 #tk-nuke-0.12.10.3
 
 # Photoshop
 engines.tk-photoshopcc.location:

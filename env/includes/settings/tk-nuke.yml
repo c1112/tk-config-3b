@@ -182,6 +182,19 @@ settings.tk-nuke.shot_step:
   - {app_instance: tk-multi-workfiles2, name: File Save...}
   - {app_instance: tk-multi-publish2, name: Publish...}
   location: "@engines.tk-nuke.location"
+  favourite_directories:
+  - display_name: "Shot Root"
+    template_directory: "shot_root"
+    icon: "icons/custom_publish_icon.png"
+  - display_name: "Sequence Root"
+    template_directory: "sequence_root"
+    icon: "icons/custom_publish_icon.png"
+  - display_name: "Shot Render"
+    template_directory: "shot_render_area_nuke"
+    icon: "icons/custom_publish_icon.png"
+  - display_name: "Shot Plates"
+    template_directory: "shot_plate_area_nuke"
+    icon: "icons/custom_publish_icon.png"
 
 ################################################################################
 # NukeStudio
