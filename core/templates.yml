@@ -428,6 +428,33 @@ paths:
         definition: '@shot_root/resources/review/{Shot}_{task_name}_{nuke.output}_v{version}.mov'
 
     #
+    # Blender
+    #
+    # define the location of a work area
+    shot_work_area_blender:
+        definition: '@shot_root/_3D/blender'
+        root_name: 'primary'
+
+    # define the location of a publish area
+    shot_publish_area_blender:
+        definition: '@shot_root/publish/blender'
+        root_name: 'primary'
+
+    # The location of WIP session files
+    blender_shot_work:
+        definition: '@shot_work_area_blender/scenes/{Shot}_{task_name}-{name}_v{version}.blend'
+        root_name: 'primary'
+
+    # The location of backups of WIP session files
+    blender_shot_snapshot:
+        definition: '@shot_work_area_blender/snapshots/{Shot}_{task_name}-{name}_v{version}/{Shot}_{task_name}-{name}_v{version}.{timestamp}.blend'
+        root_name: 'primary'
+
+    # The location of published session files
+    blender_shot_publish:
+        definition: '@shot_publish_area_blender/scenes/{Shot}_{task_name}-{name}_v{version}.blend'
+
+    #
     # Hiero
     #
 
@@ -631,6 +658,35 @@ paths:
     # The location of published nuke script files
     nuke_asset_publish:
         definition: '@asset_root/publish/nuke/{Asset}_{task_name}_v{version}.nk'
+
+    #
+    # Blender
+    #
+
+    # Location of a work area
+    asset_work_area_blender:
+        definition: '@asset_root/_3D/blender'
+        root_name: 'primary'
+
+    # Location of a publish area
+    asset_publish_area_blender:
+        definition: '@asset_root/publish/blender'
+        root_name: 'primary'
+
+    # Location of WIP session files
+    blender_asset_work:
+        definition: '@asset_work_area_blender/scenes/{Asset}_{task_name}-{name}_v{version}.blend'
+        root_name: 'primary'
+
+    # Location of backups of WIP session files
+    blender_asset_snapshot:
+        definition: '@asset_work_area_blender/snapshots/{Asset}_{task_name}-{name}_v{version}/{Asset}_{task_name}-{name}_v{version}.{timestamp}.blend'
+        root_name: 'primary'
+
+    # Location of the published session files
+    blender_asset_publish:
+        definition: '@asset_publish_area_blender/scenes/{Asset}_{task_name}-{name}_v{version}.blend'
+        root_name: 'primary'
 
     #
     # Alias

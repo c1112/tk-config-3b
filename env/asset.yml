@@ -29,6 +29,7 @@ includes:
 - ./includes/settings/tk-maya.yml
 - ./includes/settings/tk-motionbuilder.yml
 - ./includes/settings/tk-nuke.yml
+- ./includes/settings/tk-blender.yml
 - ./includes/settings/tk-photoshopcc.yml
 - ./includes/settings/tk-aftereffects.yml
 - ./includes/settings/tk-alias.yml
@@ -47,6 +48,7 @@ engines:
   tk-maya: "@settings.tk-maya.asset"
   tk-motionbuilder: "@settings.tk-motionbuilder.asset"
   tk-nuke: "@settings.tk-nuke.asset"
+  tk-blender: "@settings.tk-blender.asset"
   tk-photoshopcc: "@settings.tk-photoshopcc.asset"
   tk-aftereffects: "@settings.tk-aftereffects.asset"
   tk-alias: "@settings.tk-alias.asset"
