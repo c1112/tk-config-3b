@@ -99,6 +99,17 @@ engines.tk-nuke.location:
   # field: sg_uploaded_app
   # version: 41282 #tk-nuke-0.12.10.3
 
+# Blender
+engines.tk-blender.location:
+  #type: git
+  #branch: master
+  #path: https://github.com/c1112/tk-blender.git
+  #version: v1.1.1
+  ## Dev
+  name: tk-blender
+  type: dev
+  path: ~/Documents/Github/tk-blender
+
 # Photoshop
 engines.tk-photoshopcc.location:
   type: app_store
