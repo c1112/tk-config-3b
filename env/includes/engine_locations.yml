@@ -102,13 +102,12 @@ engines.tk-nuke.location:
 # Blender
 engines.tk-blender.location:
   type: git
-  branch: master
   path: https://github.com/c1112/tk-blender.git
-  version: v1.1.2
+  version: v1.1.3
   ## Dev
-  #name: tk-blender
-  #type: dev
-  #path: ~/Documents/Github/tk-blender
+  # name: tk-blender
+  # type: dev
+  # path: ~/Documents/Github/tk-blender
 
 # Photoshop
 engines.tk-photoshopcc.location:
