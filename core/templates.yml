@@ -293,13 +293,13 @@ paths:
         definition: '@shot_root/publish/maya'
     # The location of WIP files
     maya_shot_work:
-        definition: '@shot_root/_3D/maya/scenes/{Shot}_{task_name}_v{version}.{maya_extension}'
+        definition: '@shot_root/_3D/maya/scenes/{Shot}_{task_name}-{name}_v{version}.{maya_extension}'
     # The location of backups of WIP files
     maya_shot_snapshot:
-        definition: '@shot_root/_3D/maya/snapshots/{Shot}_{task_name}_v{version}.{timestamp}.{maya_extension}'
+        definition: '@shot_root/_3D/maya/snapshots/{Shot}_{task_name}-{name}_v{version}.{timestamp}.{maya_extension}'
     # The location of published maya files
     maya_shot_publish:
-        definition: '@shot_root/publish/maya/{Shot}_{task_name}_v{version}.{maya_extension}'
+        definition: '@shot_publish_area_maya/{Shot}_{task_name}-{name}_v{version}.{maya_extension}'
 
 
     #
@@ -473,7 +473,7 @@ paths:
     #
 
     asset_alembic_cache:
-        definition: '@asset_root/publish/caches/{Asset}_{task_name}_v{version}.abc'
+        definition: '@asset_root/publish/caches/{Asset}_{task_name}-{name}_v{version}.abc'
 
 
     #
@@ -538,13 +538,13 @@ paths:
         definition: '@asset_root/publish/maya'
     # The location of WIP files
     maya_asset_work:
-        definition: '@asset_root/_3D/maya/scenes/{Asset}_{task_name}_v{version}.{maya_extension}'
+        definition: '@asset_root/_3D/maya/scenes/{Asset}_{task_name}-{name}_v{version}.{maya_extension}'
     # The location of backups of WIP files
     maya_asset_snapshot:
-        definition: '@asset_root/_3D/maya/snapshots/{Asset}_{task_name}_v{version}.{timestamp}.{maya_extension}'
+        definition: '@asset_root/_3D/maya/snapshots/{Asset}_{task_name}-{name}_v{version}.{timestamp}.{maya_extension}'
     # The location of published maya files
     maya_asset_publish:
-        definition: '@asset_root/publish/maya/{Step}/{Asset}_{task_name}_v{version}.{maya_extension}'
+        definition: '@asset_publish_area_maya/{Asset}_{task_name}-{name}_v{version}.{maya_extension}'
 
 
     #
