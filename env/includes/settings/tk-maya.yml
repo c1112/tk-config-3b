@@ -102,7 +102,15 @@ settings.tk-maya.shot_step:
       location: "@apps.tk-multi-about.location"
     tk-multi-breakdown:
       location: "@apps.tk-multi-breakdown.location"
-    tk-multi-setframerange:
+    tk-multi-setframerange_cuts:
+      menu_name: Sync frame range using cut fields
+      sg_in_frame_field: sg_cut_in
+      sg_out_frame_field: sg_cut_out
+      location: "@apps.tk-multi-setframerange.location"
+    tk-multi-setframerange_handles:
+      menu_name: Sync frame range using handle fields
+      sg_in_frame_field: sg_handle_in
+      sg_out_frame_field: sg_handle_out
       location: "@apps.tk-multi-setframerange.location"
     tk-multi-loader2: "@settings.tk-multi-loader2.maya"
     tk-multi-publish2: "@settings.tk-multi-publish2.maya.shot_step"
