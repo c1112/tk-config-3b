@@ -475,6 +475,9 @@ paths:
     asset_alembic_cache:
         definition: '@asset_root/publish/caches/{Asset}_{task_name}-{name}_v{version}.abc'
 
+    shot_alembic_cache:
+        definition: '@shot_root/publish/caches/{Shot}_{task_name}-{name}_v{version}.abc'
+
 
     #
     # Photoshop
