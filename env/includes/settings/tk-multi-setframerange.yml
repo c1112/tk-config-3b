@@ -15,13 +15,36 @@ includes:
 - ../app_locations.yml
 
 ################################################################################
-
 # asset
 settings.tk-multi-setframerange.3dsmax:
   hook_frame_operation: "{engine}/tk-multi-setframerange/basic/frame_operations.py"
   location: "@apps.tk-multi-setframerange.location"
+################################################################################
 
-# blender
-settings.tk-multi-setframerange.blender:
+#Generic settings for most apps
+settings.tk-multi-setframerange.generic_cuts:
+  menu_name: &menu_name_cut Sync frame range using cut
+  sg_in_frame_field: &sg_in_frame_field_cut sg_cut_in
+  sg_out_frame_field: &sg_out_frame_field_cut sg_cut_out
+  location: &location "@apps.tk-multi-setframerange.location"
+
+settings.tk-multi-setframerange.generic_handles:
+  menu_name: &menu_name_handle Sync frame range using handles
+  sg_in_frame_field: &sg_in_frame_field_handle sg_head_in
+  sg_out_frame_field: &sg_out_frame_field_handle sg_tail_out
+  location: *location
+
+#Blender
+settings.tk-multi-setframerange.blender_cuts:
+  menu_name: *menu_name_cut
+  sg_in_frame_field: *sg_in_frame_field_cut
+  sg_out_frame_field: *sg_out_frame_field_cut
+  location: *location
   hook_frame_operation: "{engine}/tk-multi-setframerange/frame_operations_tk-blender.py"
-  location: "@apps.tk-multi-setframerange.location"
+
+settings.tk-multi-setframerange.blender_handles:
+  menu_name: *menu_name_handle
+  sg_in_frame_field: *sg_in_frame_field_handle
+  sg_out_frame_field: *sg_out_frame_field_handle
+  location: *location
+  hook_frame_operation: "{engine}/tk-multi-setframerange/frame_operations_tk-blender.py"
