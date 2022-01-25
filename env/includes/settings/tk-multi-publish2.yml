@@ -215,12 +215,12 @@ settings.tk-multi-publish2.maya.shot_step.scene:
 
 settings.tk-multi-publish2.maya.shot_step.alembic:
   display_name: Publish Alembic
-  collector: "{self}/collector.py:{config}/tk-multi-publish2/maya/collector.py"
+  collector: "{self}/collector.py:{config}/tk-multi-publish2/maya/abc_collector.py"
   collector_settings:
       Work Template: maya_shot_work
   publish_plugins:
   - name: Publish to Shotgun
-    hook: "{self}/publish_file.py:{engine}/tk-multi-publish2/basic/publish_session_geometry.py"
+    hook: "{self}/publish_file.py:{config}/tk-multi-publish2/maya/publish_session_geometry.py"
     settings:
         Publish Template: shot_alembic_cache
   help_url: *help_url

@@ -138,7 +138,9 @@ keys:
             mb: Maya Binary (.mb)
         default: ma
         alias: extension
-
+    #set name for publishing alembics at the shot level
+    abcset_name:
+      type: str
     # needed by the Alias import as reference functionality
     alias.extension:
         type: str
@@ -476,7 +478,7 @@ paths:
         definition: '@asset_root/publish/caches/{Asset}_{task_name}-{name}_v{version}.abc'
 
     shot_alembic_cache:
-        definition: '@shot_root/publish/caches/{Shot}_{task_name}-{name}_v{version}.abc'
+        definition: '@shot_root/publish/caches/{Shot}_{task_name}-{name}-{abcset_name}_v{version}.abc'
 
 
     #
