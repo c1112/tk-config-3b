@@ -17,73 +17,73 @@
 engines.tk-3dsmaxplus.location:
   type: app_store
   name: tk-3dsmaxplus
-  version: v0.5.11
+  version: v0.6.1
 
 engines.tk-3dsmax.location:
   type: app_store
   name: tk-3dsmax
-  version: v1.1.6
+  version: v1.2.2
 
 # After Effects
 engines.tk-aftereffects.location:
   type: app_store
   name: tk-aftereffects
-  version: v0.2.1
+  version: v0.3.1
 
 # Alias
 engines.tk-alias.location:
   type: app_store
   name: tk-alias
-  version: v2.0.11
+  version: v2.1.2
 
 # Desktop
 engines.tk-desktop.location:
   type: app_store
   name: tk-desktop
-  version: v2.5.13
+  version: v2.6.2
 
 # Desktop2
 engines.tk-desktop2.location:
   type: app_store
   name: tk-desktop2
-  version: v1.4.3
+  version: v1.5.1
 
 # Flame
 engines.tk-flame.location:
   type: app_store
   name: tk-flame
-  version: v1.16.2
+  version: v1.17.2
 
 # Houdini
 engines.tk-houdini.location:
   type: app_store
   name: tk-houdini
-  version: v1.7.2
+  version: v1.8.2
 
 # Mari
 engines.tk-mari.location:
   type: app_store
   name: tk-mari
-  version: v1.2.4
+  version: v1.3.3
 
 # Maya
 engines.tk-maya.location:
   type: app_store
   name: tk-maya
-  version: v0.10.4
+  version: v0.11.2
 
 # Motion Builder
 engines.tk-motionbuilder.location:
   type: app_store
   name: tk-motionbuilder
-  version: v0.5.2
+  version: v0.6.3
 
 # Nuke
 engines.tk-nuke.location:
   ### App Store
-   name: tk-nuke
-   type: app_store
-   version: v0.13.0
+  name: tk-nuke
+  type: app_store
+  version: v0.14.3
   ## Dev
   #name: tk-nuke
   # type: dev
@@ -103,7 +103,7 @@ engines.tk-nuke.location:
 engines.tk-blender.location:
   type: git
   path: https://github.com/c1112/tk-blender.git
-  version: v1.1.3
+  version: v1.1.4
   ## Dev
   # name: tk-blender
   # type: dev
@@ -113,22 +113,22 @@ engines.tk-blender.location:
 engines.tk-photoshopcc.location:
   type: app_store
   name: tk-photoshopcc
-  version: v1.8.2
+  version: v1.9.1
 
 # Shell
 engines.tk-shell.location:
   type: app_store
   name: tk-shell
-  version: v0.8.1
+  version: v0.9.1
 
 # Shotgun
 engines.tk-shotgun.location:
   type: app_store
   name: tk-shotgun
-  version: v0.9.0
+  version: v0.10.1
 
 # VRED
 engines.tk-vred.location:
   type: app_store
   name: tk-vred
-  version: v2.0.10
+  version: v2.1.2
