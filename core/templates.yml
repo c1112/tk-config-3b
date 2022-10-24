@@ -94,6 +94,10 @@ keys:
     aov_name:
         type: str
 
+    blender.scene:
+        alias: scene
+        type: str
+
     # these are used by the Hiero exporter and pipeline
     YYYY:
         type: int
@@ -190,7 +194,7 @@ paths:
 
     ##########################################################################################
     # Project level paths
-    #
+    ##########################################################################################
 
     #
     # Hiero
@@ -213,16 +217,37 @@ paths:
 
     ##########################################################################################
     # Sequence level paths
-    #
-
+    ##########################################################################################
 
     ##########################################################################################
     # Shot level paths
-    #
+    ##########################################################################################
 
+    shot_alembic_cache:
+        definition: '@shot_root/publish/caches/{Shot}_{task_name}-{name}-{abcset_name}_v{version}.abc'
+
+    ##########################################################################################
+    # Asset level paths
+    ##########################################################################################
+
+    asset_alembic_cache:
+        definition: '@asset_root/publish/caches/{Asset}_{task_name}-{name}_v{version}.abc'
+
+
+
+    ##########################################################################################
+    ##########################################################################################
+    ##########################################################################################
     #
-    # Flame
+    #                               SHOT PIPELINE
     #
+    ##########################################################################################
+    ##########################################################################################
+    ##########################################################################################
+
+    ##########################################################################################
+    # Flame Shot Pipeline
+    ##########################################################################################
 
     flame_segment_clip:
         definition: 'sequences/{Sequence}/{Shot}/finishing/clip/sources/{segment_name}.clip'
@@ -239,9 +264,9 @@ paths:
     flame_shot_comp_exr:
         definition: 'sequences/{Sequence}/{Shot}/finishing/comp/{segment_name}_v{version}/{Shot}_{segment_name}_v{version}.{flame.frame}.exr'
 
-    #
-    # Photoshop
-    #
+    ##########################################################################################
+    # Photoshop Shot Pipeline
+    ##########################################################################################
 
     # The location of WIP files
     photoshop_shot_work:
@@ -257,9 +282,9 @@ paths:
     photoshop_shot_publish:
         definition: '@shot_root/publish/photoshop/{name}.v{version}.psd'
 
-    #
-    # After Effects
-    #
+    ##########################################################################################
+    # After Effects Shot Pipeline
+    ##########################################################################################
 
     # The location of WIP files
     aftereffects_shot_work:
@@ -283,9 +308,9 @@ paths:
         definition: '@shot_root/review/{Shot}_{name}_{afx.comp}_v{version}.{afx.mov.ext}'
 
 
-    #
-    # Maya
-    #
+    ##########################################################################################
+    # Maya Shot Pipeline
+    ##########################################################################################
 
     # define the location of a work area
     shot_work_area_maya:
@@ -304,9 +329,9 @@ paths:
         definition: '@shot_publish_area_maya/{Shot}_{task_name}-{name}_v{version}.{maya_extension}'
 
 
-    #
-    # Houdini
-    #
+    ##########################################################################################
+    # Houdini Shot Pipeline
+    ##########################################################################################
 
     # define the location of a work area
     shot_work_area_houdini:
@@ -342,9 +367,9 @@ paths:
         definition: '@shot_root/renders/houdini/{task_name}/{houdini.node}/{aov_name}/v{version}/{width}x{height}/{Shot}_{task_name}-{name}_v{version}.{SEQ}.exr'
 
 
-    #
-    # 3dsmax
-    #
+    ##########################################################################################
+    # 3dsmax Shot Pipeline
+    ##########################################################################################
 
     # define the location of a work area
     shot_work_area_max:
@@ -363,9 +388,9 @@ paths:
         definition: '@shot_root/publish/3dsmax/{name}.v{version}.max'
 
 
-    #
-    # Motionbuilder
-    #
+    ##########################################################################################
+    # Motionbuilder Shot Pipeline
+    ##########################################################################################
 
     # define the location of a work area
     shot_work_area_mobu:
@@ -384,9 +409,9 @@ paths:
         definition: '@shot_root/publish/mobu/{name}.v{version}.fbx'
 
 
-    #
-    # Nuke
-    #
+    ##########################################################################################
+    # Nuke Shot Pipeline
+    ##########################################################################################
 
     # define the location of a work area
     shot_work_area_nuke:
@@ -429,36 +454,41 @@ paths:
     nuke_shot_render_movie:
         definition: '@shot_root/resources/review/{Shot}_{task_name}_{nuke.output}_v{version}.mov'
 
-    #
-    # Blender
-    #
+
+    ##########################################################################################
+    # Blender Shot Pipeline
+    ##########################################################################################
+
     # define the location of a work area
     shot_work_area_blender:
         definition: '@shot_root/_3D/blender'
-        root_name: 'primary'
 
     # define the location of a publish area
     shot_publish_area_blender:
         definition: '@shot_root/publish/blender'
-        root_name: 'primary'
+
+    shot_render_area_blender:
+        definition: '@shot_root/renders/blender'
 
     # The location of WIP session files
     blender_shot_work:
-        definition: '@shot_work_area_blender/scenes/{Shot}_{task_name}-{name}_v{version}.blend'
-        root_name: 'primary'
+        definition: '@shot_work_area_blender/scenes/@blender_shot_pd.blend'
 
     # The location of backups of WIP session files
     blender_shot_snapshot:
-        definition: '@shot_work_area_blender/snapshots/{Shot}_{task_name}-{name}_v{version}/{Shot}_{task_name}-{name}_v{version}.{timestamp}.blend'
-        root_name: 'primary'
+        definition: '@shot_work_area_blender/snapshots/@blender_shot_pd/@blender_shot_pd.{timestamp}.blend'
 
     # The location of published session files
     blender_shot_publish:
-        definition: '@shot_publish_area_blender/scenes/{Shot}_{task_name}-{name}_v{version}.blend'
+        definition: '@shot_publish_area_blender/scenes/@blender_shot_pd.blend'
 
-    #
-    # Hiero
-    #
+    blender_shot_render:
+        definition: '@shot_render_area_blender/@blender_shot_pd/{blender.scene}/{Shot}_{task_name}-{name}-{blender.scene}_v{version}.{SEQ}'
+
+
+    ##########################################################################################
+    # Hiero Shot Pipeline
+    ##########################################################################################
 
     # export of shot asset data from hiero
     hiero_plate_path:
@@ -466,24 +496,22 @@ paths:
     hiero_render_path:
         definition: 'sequences/{Sequence}/{Shot}/editorial/{YYYY}_{MM}_{DD}/renders/{project}_{Shot}.{SEQ}.dpx'
 
+
     ##########################################################################################
-    # Asset pipeline
-
-
+    ##########################################################################################
+    ##########################################################################################
     #
-    # Alembic caches
+    #                               ASSET PIPELINE
     #
-
-    asset_alembic_cache:
-        definition: '@asset_root/publish/caches/{Asset}_{task_name}-{name}_v{version}.abc'
-
-    shot_alembic_cache:
-        definition: '@shot_root/publish/caches/{Shot}_{task_name}-{name}-{abcset_name}_v{version}.abc'
+    ##########################################################################################
+    ##########################################################################################
+    ##########################################################################################
 
 
-    #
-    # Photoshop
-    #
+
+    ##########################################################################################
+    # Photoshop Asset pipeline
+    ##########################################################################################
 
     # The location of WIP files
     photoshop_asset_work:
@@ -499,9 +527,10 @@ paths:
     photoshop_asset_publish:
         definition: '@asset_root/publish/photoshop/{Asset}_{task_name}_v{version}.psd'
 
-    #
-    # after effects
-    #
+
+    ##########################################################################################
+    # After Effects Asset pipeline
+    ##########################################################################################
 
     # The location of WIP files
     aftereffects_asset_work:
@@ -525,15 +554,16 @@ paths:
         definition: '@asset_root/review/{Asset}_{name}_{afx.comp}_v{version}.{afx.mov.ext}'
 
 
-    #
-    # Mari
-    #
+    ##########################################################################################
+    # Mari Asset pipeline
+    ##########################################################################################
     asset_mari_texture_tif:
         definition: '@asset_root/publish/mari/{name}_{mari.channel}[_{mari.layer}].v{version}.{UDIM}.tif'
 
-    #
-    # Maya
-    #
+
+    ##########################################################################################
+    # Maya Asset pipeline
+    ##########################################################################################
 
     # define the location of a work area
     asset_work_area_maya:
@@ -552,9 +582,9 @@ paths:
         definition: '@asset_publish_area_maya/{Asset}_{task_name}-{name}_v{version}.{maya_extension}'
 
 
-    #
-    # Houdini
-    #
+    ##########################################################################################
+    # Houdini Asset pipeline
+    ##########################################################################################
 
     # define the location of a work area
     asset_work_area_houdini:
@@ -590,9 +620,9 @@ paths:
         definition: '@asset_root/renders/houdini/{task_name}/{houdini.node}/{aov_name}/v{version}/{width}x{height}/{Asset}_{task_name}-{name}_v{version}.{SEQ}.exr'
 
 
-    #
-    # 3dsmax
-    #
+    ##########################################################################################
+    # 3dsmax Asset pipeline
+    ##########################################################################################
 
     # define the location of a work area
     asset_work_area_max:
@@ -611,9 +641,9 @@ paths:
         definition: '@asset_root/publish/3dsmax/{name}.v{version}.max'
 
 
-    #
-    # Motionbuilder
-    #
+    ##########################################################################################
+    # Motionbuilder Asset pipeline
+    ##########################################################################################
 
     # define the location of a work area
     asset_work_area_mobu:
@@ -632,9 +662,9 @@ paths:
         definition: '@asset_root/publish/mobu/{name}.v{version}.fbx'
 
 
-    #
-    # Nuke
-    #
+    ##########################################################################################
+    # Nuke Asset pipeline
+    ##########################################################################################
 
     # define the location of a work area
     asset_work_area_nuke:
@@ -664,106 +694,38 @@ paths:
     nuke_asset_publish:
         definition: '@asset_root/publish/nuke/{Asset}_{task_name}_v{version}.nk'
 
-    #
-    # Blender
-    #
+
+    ##########################################################################################
+    # Blender Asset pipeline
+    ##########################################################################################
 
     # Location of a work area
     asset_work_area_blender:
         definition: '@asset_root/_3D/blender'
-        root_name: 'primary'
 
     # Location of a publish area
     asset_publish_area_blender:
         definition: '@asset_root/publish/blender'
-        root_name: 'primary'
+
+    # Location of a render area
+    asset_render_area_blender:
+        definition: '@asset_root/renders/blender'
 
     # Location of WIP session files
     blender_asset_work:
-        definition: '@asset_work_area_blender/scenes/{Asset}_{task_name}-{name}_v{version}.blend'
-        root_name: 'primary'
+        definition: '@asset_work_area_blender/scenes/@blender_asset_pd.blend'
 
     # Location of backups of WIP session files
     blender_asset_snapshot:
-        definition: '@asset_work_area_blender/snapshots/{Asset}_{task_name}-{name}_v{version}/{Asset}_{task_name}-{name}_v{version}.{timestamp}.blend'
-        root_name: 'primary'
+        definition: '@asset_work_area_blender/snapshots/@blender_asset_pd/@blender_asset_pd.{timestamp}.blend'
 
     # Location of the published session files
     blender_asset_publish:
-        definition: '@asset_publish_area_blender/scenes/{Asset}_{task_name}-{name}_v{version}.blend'
-        root_name: 'primary'
+        definition: '@asset_publish_area_blender/scenes/@blender_asset_pd.blend'
 
-    #
-    # Alias
-    #
-
-    # define the location of a work area
-    asset_work_area_alias:
-        definition: '@asset_root/work/alias'
-    # define the location of a publish area
-    asset_publish_area_alias:
-        definition: '@asset_root/publish/alias'
-    # The location of WIP files
-    alias_asset_work:
-        definition: '@asset_root/work/alias/{name}.v{version}.wire'
-    # The location of backups of WIP files
-    alias_asset_snapshot:
-        definition: '@asset_root/work/alias/snapshots/{name}.v{version}.{timestamp}.wire'
-    # The location of published Alias files
-    alias_asset_publish:
-        definition: '@asset_root/publish/alias/{name}.v{version}.wire'
-
-    # Alias translations
-
-    # The location of the reference created on the fly by Alias when importing a file as ref
-    alias_asset_reference_publish:
-        definition: '@asset_root/publish/alias/translations/{name}_{alias.extension}.v{version}.wref'
-    alias_asset_igs_publish:
-        definition: '@asset_root/publish/alias/translations/{name}.v{version}.igs'
-    alias_asset_catpart_publish:
-        definition: '@asset_root/publish/alias/translations/{name}.v{version}.CATPart'
-    alias_asset_jt_publish:
-        definition: '@asset_root/publish/alias/translations/{name}.v{version}.jt'
-    alias_asset_stp_publish:
-        definition: '@asset_root/publish/alias/translations/{name}.v{version}.stp'
-    alias_asset_wref_publish:
-        definition: '@asset_root/publish/alias/translations/{name}.v{version}.wref'
-
-    #
-    # VRED
-    #
-
-    # define the location of a work area
-    asset_work_area_vred:
-        definition: '@asset_root/work/vred'
-    # define the location of a publish area
-    asset_publish_area_vred:
-        definition: '@asset_root/publish/vred'
-    # The location of WIP files
-    vred_asset_work:
-        definition: '@asset_root/work/vred/{name}.v{version}.vpb'
-    # The location of backups of WIP files
-    vred_asset_snapshot:
-        definition: '@asset_root/work/vred/snapshots/{name}.v{version}.{timestamp}.vpb'
-    # The location of published VRED files
-    vred_asset_publish:
-        definition: '@asset_root/publish/vred/{name}.v{version}.vpb'
-
-    # define the location of the WIP render images
-    vred_asset_render_work:
-        definition: '@asset_root/work/images/{name}/v{version}/{Asset}_{name}_v{version}[-{vred.render_pass}].{vred.render_extension}'
-
-    # define the location of the WIP renderings for an image sequence
-    vred_asset_render_sequence_work:
-        definition: '@asset_root/work/images/{name}/v{version}/{Asset}_{name}_v{version}[-{vred.render_pass}]-{vred.frame}.{vred.render_extension}'
-
-    # define the location of the published render images
-    vred_asset_render_publish:
-        definition: '@asset_root/publish/images/{name}/v{version}/{Asset}_{name}_v{version}[-{vred.render_pass}].{vred.render_extension}'
-
-    # define the location of the published renderings for an image sequence
-    vred_asset_render_sequence_publish:
-        definition: '@asset_root/publish/images/{name}/v{version}/{Asset}_{name}_v{version}[-{vred.render_pass}]-{vred.frame}.{vred.render_extension}'
+    # Location of renders for assets
+    blender_asset_render:
+        definition: '@asset_render_area_blender/@blender_asset_pd/{blender.scene}/{Asset}_{task_name}-{name}-{blender.scene}_v{version}.{SEQ}'
 
 
 #
@@ -788,3 +750,9 @@ strings:
 
     # define how new Mari projects should be named
     mari_asset_project_name: "{mari.project_name} - Asset {asset_name}, {task_name}"
+
+    #blender shot filename
+    blender_shot_pd: "{Shot}_{task_name}-{name}_v{version}"
+
+    #blender Asset filename
+    blender_asset_pd: "{Asset}_{task_name}-{name}_v{version}"
