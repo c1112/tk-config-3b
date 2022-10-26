@@ -311,6 +311,7 @@ settings.tk-multi-publish2.blender.asset_step:
     hook: "{self}/publish_file.py:{engine}/tk-multi-publish2/basic/publish_session_geometry.py"
     settings:
         Publish Template: asset_alembic_cache
+        Publish Multi Template: asset_multi_cache
   help_url: *help_url
   location: "@apps.tk-multi-publish2.location"
 
@@ -334,6 +335,11 @@ settings.tk-multi-publish2.blender.shot_step:
     hook: "{self}/publish_file.py:{engine}/tk-multi-publish2/basic/publish_session.py"
     settings:
         Publish Template: blender_shot_publish
+  - name: Publish to Shotgun
+    hook: "{self}/publish_file.py:{engine}/tk-multi-publish2/basic/publish_session_geometry.py"
+    settings:
+        Publish Template: shot_alembic_cache
+        Publish Multi Template: shot_multi_cache
   help_url: *help_url
   location: "@apps.tk-multi-publish2.location"
 

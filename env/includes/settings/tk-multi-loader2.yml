@@ -71,6 +71,7 @@ settings.tk-multi-loader2.flame:
 settings.tk-multi-loader2.houdini:
   action_mappings:
     Alembic Cache: [import]
+    Alembic Camera: [import]
     Houdini Scene: [merge]
     Image: [file_cop]
     Photoshop Image: [file_cop]
@@ -183,6 +184,7 @@ settings.tk-multi-loader2.blender:
   actions_hook: '{engine}/tk-multi-loader2/tk-blender_actions.py'
   action_mappings:
     Alembic Cache: [import]
+    Alembic Camera: [import]
     Abc File: [import]
     Dae File: [import]
     Collada File: [import]
