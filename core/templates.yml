@@ -142,8 +142,12 @@ keys:
             mb: Maya Binary (.mb)
         default: ma
         alias: extension
-    #set name for publishing alembics at the shot level
+    #needed for Multi publishing out of workfiles
     abcset_name:
+      type: str
+    ext:
+      type: str
+    ftype:
       type: str
     # needed by the Alias import as reference functionality
     alias.extension:
@@ -224,7 +228,9 @@ paths:
     ##########################################################################################
 
     shot_alembic_cache:
-        definition: '@shot_root/publish/caches/{Shot}_{task_name}-{name}-{abcset_name}_v{version}.abc'
+        definition: '@shot_root/publish/caches/{Shot}_{task_name}-{name}_v{version}.abc'
+    shot_multi_cache:
+        definition: '@shot_root/publish/caches/{ftype}/{Shot}_{task_name}-{name}-{abcset_name}_v{version}.{ext}'
 
     ##########################################################################################
     # Asset level paths
@@ -232,8 +238,8 @@ paths:
 
     asset_alembic_cache:
         definition: '@asset_root/publish/caches/{Asset}_{task_name}-{name}_v{version}.abc'
-
-
+    asset_multi_cache:
+        definition: '@asset_root/publish/caches/{ftype}/{Asset}_{task_name}-{name}-{abcset_name}_v{version}.{ext}'
 
     ##########################################################################################
     ##########################################################################################
