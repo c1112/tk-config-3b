@@ -206,11 +206,11 @@ settings.tk-multi-loader2.blender:
     Wav File: [asSequencerSound]
     Sound File: [asSequencerSound]
     Movie File: [asSequencerMovie, asCompositorNodeMovieClip]
-    Image File: [asSequencerImage, asCompositorNodeImage]
+    Image File: [asSequencerImage, asCompositorNodeImage, asMovieClip]
     Texture File: [asSequencerImage, asCompositorNodeImage]
     Sound: [asSequencerSound]
     Movie: [asSequencerMovie, asCompositorNodeMovieClip]
-    Image: [asSequencerImage, asCompositorNodeImage]
+    Image: [asSequencerImage, asCompositorNodeImage, asMovieClip]
     Texture: [asSequencerImage, asCompositorNodeImage]
   entities:
   - caption: Assets
