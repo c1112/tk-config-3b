@@ -42,7 +42,7 @@
 # ------------------------------------------------------------------------------
 
 primary:
-    mac_path:
+    mac_path: /Volumes/Macintosh\ HD/Users/Shared/tb_shotgrid
     linux_path:
     windows_path:
 
@@ -52,7 +52,7 @@ primary:
     default: true
 
 offsite:
-    mac_path: /Users/Shared/tb_shotgrid
+    mac_path: /Volumes/Macintosh\ HD/Users/Shared/tb_shotgrid
     linux_path:
     windows_path:
 
