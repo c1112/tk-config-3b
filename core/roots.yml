@@ -42,20 +42,12 @@
 # ------------------------------------------------------------------------------
 
 primary:
-    mac_path:
-    linux_path:
-    windows_path:
-
     description: A top-level root folder for production data. Project folders
         will be created beneath this location.
     shotgun_storage_id: 3
     default: true
 
 offsite:
-    mac_path:
-    linux_path:
-    windows_path:
-
     description: A top-level root folder for production data. Project folders
         will be created beneath this location.
     shotgun_storage_id: 2
