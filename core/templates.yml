@@ -142,6 +142,16 @@ keys:
             mb: Maya Binary (.mb)
         default: ma
         alias: extension
+
+    # houdini supports two extension types.
+    houdini_extension:
+        type: str
+        choices:
+            hip: Houdini Commercial (.hip)
+            hiplc: Houdini Limited Commercial (.hiplc)
+        default: hip
+        alias: extension
+
     #needed for Multi publishing out of workfiles
     abcset_name:
       type: str
@@ -347,13 +357,13 @@ paths:
         definition: '@shot_root/publish/houdini'
     # The location of WIP files
     houdini_shot_work:
-        definition: '@shot_root/_3D/houdini/scenes/{Shot}_{task_name}-{name}_v{version}.hiplc'
+        definition: '@shot_root/_3D/houdini/scenes/{Shot}_{task_name}-{name}_v{version}.{houdini_extension}'
     # The location of backups of WIP files
     houdini_shot_snapshot:
-        definition: '@shot_root/_3D/houdini/snapshots/{Shot}_{task_name}-{name}_v{version}.{timestamp}.hiplc'
+        definition: '@shot_root/_3D/houdini/snapshots/{Shot}_{task_name}-{name}_v{version}.{houdini_extension}'
     # The location of published houdini files
     houdini_shot_publish:
-        definition: '@shot_root/publish/houdini/{Shot}_{task_name}-{name}_v{version}.hiplc'
+        definition: '@shot_root/publish/houdini/{Shot}_{task_name}-{name}_v{version}.{houdini_extension}'
     # Alembic caches
     houdini_shot_work_alembic_cache:
         definition: '@shot_root/_3D/houdini/cache/alembic/{task_name}/{houdini.node}/v{version}/{Shot}_{task_name}-{name}_v{version}.abc'
@@ -600,13 +610,13 @@ paths:
         definition: '@asset_root/publish/houdini'
     # The location of WIP files
     houdini_asset_work:
-        definition: '@asset_root/_3D/houdini/scenes/{Asset}_{task_name}-{name}_v{version}.hiplc'
+        definition: '@asset_root/_3D/houdini/scenes/{Asset}_{task_name}-{name}_v{version}.{houdini_extension}'
     # The location of backups of WIP files
     houdini_asset_snapshot:
-        definition: '@asset_root/_3D/houdini/snapshots/{Asset}_{task_name}-{name}_v{version}.{timestamp}.hiplc'
+        definition: '@asset_root/_3D/houdini/snapshots/{Asset}_{task_name}-{name}_v{version}.{timestamp}.{houdini_extension}'
     # The location of published houdini files
     houdini_asset_publish:
-        definition: '@asset_root/publish/houdini/{Step}/{Asset}_{task_name}-{name}_v{version}.hiplc'
+        definition: '@asset_root/publish/houdini/{Step}/{Asset}_{task_name}-{name}_v{version}.{houdini_extension}'
     # Alembic caches
     houdini_asset_work_alembic_cache:
         definition: '@asset_root/_3D/houdini/cache/alembic/{task_name}/{houdini.node}/v{version}/{Asset}_{task_name}-{name}_v{version}.abc'
