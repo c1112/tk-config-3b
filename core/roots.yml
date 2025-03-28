@@ -42,7 +42,7 @@
 # ------------------------------------------------------------------------------
 
 primary:
-    mac_path:
+    mac_path: /Users/Shared/tb_shotgrid
     linux_path:
     windows_path:
 
