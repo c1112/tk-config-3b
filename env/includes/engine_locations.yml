@@ -103,7 +103,7 @@ engines.tk-nuke.location:
 engines.tk-blender.location:
   type: git
   path: https://github.com/c1112/tk-blender.git
-  version: v1.1.6
+  version: v1.1.7
   ## Dev
   # name: tk-blender
   # type: dev
