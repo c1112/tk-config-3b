@@ -448,22 +448,26 @@ paths:
     nuke_shot_publish:
         definition: '@shot_root/publish/nuke/{Shot}_{task_name}_v{version}.nk'
     # write node outputs
-    nuke_shot_render_mono_dpx:
+    ## DPX ##
+    nuke_shot_render_dpx:
         definition: '@shot_render_area_nuke/{task_name}/{Shot}_{task_name}_{nuke.output}_v{version}/{width}x{height}/{Shot}_{task_name}_{nuke.output}_v{version}.{SEQ}.dpx'
-    nuke_shot_render_pub_mono_dpx:
+    nuke_shot_render_pub_dpx:
         definition: '@shot_root/publish/elements/{task_name}/{Shot}_{task_name}_{nuke.output}_v{version}/{width}x{height}/{Shot}_{task_name}_{nuke.output}_v{version}.{SEQ}.dpx'
-    nuke_shot_render_mono_jpg:
+    ## JPG ##
+    nuke_shot_render_jpg:
         definition: '@shot_render_area_nuke/{task_name}/{Shot}_{task_name}_{nuke.output}_v{version}/{width}x{height}/{Shot}_{task_name}_{nuke.output}_v{version}.{SEQ}.jpg'
-    nuke_shot_render_pub_mono_jpg:
+    nuke_shot_render_pub_jpg:
         definition: '@shot_root/publish/elements/{task_name}/{Shot}_{task_name}_{nuke.output}_v{version}/{width}x{height}/{Shot}_{task_name}_{nuke.output}_v{version}.{SEQ}.jpg'
-    nuke_shot_render_mono_exr:
+    ## COMP EXR ##
+    nuke_shot_render_exr:
+        definition: '@shot_render_area_nuke/{task_name}/{Shot}_{task_name}_v{version}/{width}x{height}/{Shot}_{task_name}_v{version}.{SEQ}.exr'
+    nuke_shot_render_pub_exr:
+        definition: '@shot_root/publish/elements/{task_name}/{Shot}_{task_name}_v{version}/{width}x{height}/{Shot}_{task_name}_v{version}.{SEQ}.exr'
+    ## ELEMENT EXR ##
+    nuke_shot_render_element_exr:
         definition: '@shot_render_area_nuke/{task_name}/{Shot}_{task_name}_{nuke.output}_v{version}/{width}x{height}/{Shot}_{task_name}_{nuke.output}_v{version}.{SEQ}.exr'
-    nuke_shot_render_pub_mono_exr:
+    nuke_shot_render_pub_element_exr:
         definition: '@shot_root/publish/elements/{task_name}/{Shot}_{task_name}_{nuke.output}_v{version}/{width}x{height}/{Shot}_{task_name}_{nuke.output}_v{version}.{SEQ}.exr'
-    nuke_shot_render_stereo:
-        definition: '@shot_render_area_nuke/{task_name}/{Shot}_{task_name}_{nuke.output}_v{version}/{width}x{height}/{Shot}_{task_name}_{nuke.output}_{eye}_v{version}.{SEQ}.exr'
-    nuke_shot_render_pub_stereo:
-        definition: '@shot_root/publish/elements/{task_name}/{Shot}_{task_name}_{nuke.output}_{eye}_v{version}/{width}x{height}/{Shot}_{task_name}_{nuke.output}_{eye}_v{version}.{SEQ}.exr'
     # review output
     shot_quicktime_quick:
         definition: '@shot_root/resources/review/quickdaily/{Shot}_{task_name}_{iteration}.mov'
@@ -499,7 +503,7 @@ paths:
         definition: '@shot_publish_area_blender/scenes/@blender_shot_pd.blend'
 
     blender_shot_render:
-        definition: '@shot_render_area_blender/@blender_shot_pd/{blender.scene}/{Shot}_{task_name}-{name}-{blender.scene}_v{version}.{SEQ}'
+        definition: '@shot_render_area_blender/@blender_shot_pd/{blender.scene}/{Shot}_{task_name}_{name}_{blender.scene}_v{version}.{SEQ}'
 
 
     ##########################################################################################
@@ -741,7 +745,7 @@ paths:
 
     # Location of renders for assets
     blender_asset_render:
-        definition: '@asset_render_area_blender/@blender_asset_pd/{blender.scene}/{Asset}_{task_name}-{name}-{blender.scene}_v{version}.{SEQ}'
+        definition: '@asset_render_area_blender/@blender_asset_pd/{blender.scene}/{Asset}_{task_name}_{name}_{blender.scene}_v{version}.{SEQ}'
 
 
 #
@@ -768,7 +772,7 @@ strings:
     mari_asset_project_name: "{mari.project_name} - Asset {asset_name}, {task_name}"
 
     #blender shot filename
-    blender_shot_pd: "{Shot}_{task_name}-{name}_v{version}"
+    blender_shot_pd: "{Shot}_{task_name}_{name}_v{version}"
 
     #blender Asset filename
-    blender_asset_pd: "{Asset}_{task_name}-{name}_v{version}"
+    blender_asset_pd: "{Asset}_{task_name}_{name}_v{version}"
