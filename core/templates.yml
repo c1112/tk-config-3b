@@ -44,11 +44,7 @@ keys:
         type: int
     version:
         type: int
-        format_spec: "03"
-    version_four:
-       type: int
-       format_spec: "04"
-       alias: version
+        format_spec: "04"
     timestamp:
         type: str
     width:
@@ -503,7 +499,7 @@ paths:
         definition: '@shot_publish_area_blender/scenes/@blender_shot_pd.blend'
 
     blender_shot_render:
-        definition: '@shot_render_area_blender/@blender_shot_pd/{blender.scene}/{Shot}_{task_name}_{name}_{blender.scene}_v{version_four}.{SEQ}'
+        definition: '@shot_render_area_blender/@blender_shot_pd/{blender.scene}/{Shot}_{task_name}_{name}_{blender.scene}_v{version}.{SEQ}'
 
 
     ##########################################################################################
@@ -745,7 +741,7 @@ paths:
 
     # Location of renders for assets
     blender_asset_render:
-        definition: '@asset_render_area_blender/@blender_asset_pd/{blender.scene}/{Asset}_{task_name}_{name}_{blender.scene}_v{version_four}.{SEQ}'
+        definition: '@asset_render_area_blender/@blender_asset_pd/{blender.scene}/{Asset}_{task_name}_{name}_{blender.scene}_v{version}.{SEQ}'
 
 
 #
@@ -770,9 +766,3 @@ strings:
 
     # define how new Mari projects should be named
     mari_asset_project_name: "{mari.project_name} - Asset {asset_name}, {task_name}"
-
-    #blender shot filename
-    blender_shot_pd: "{Shot}_{task_name}_{name}_v{version_four}"
-
-    #blender Asset filename
-    blender_asset_pd: "{Asset}_{task_name}_{name}_v{version_four}"
