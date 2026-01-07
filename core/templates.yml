@@ -766,3 +766,10 @@ strings:
 
     # define how new Mari projects should be named
     mari_asset_project_name: "{mari.project_name} - Asset {asset_name}, {task_name}"
+
+    #blender shot filename
+    blender_shot_pd: "{Shot}_{task_name}_{name}_v{version}"
+
+    #blender Asset filename
+    blender_asset_pd: "{Asset}_{task_name}_{name}_v{version}"
+    
