@@ -61,10 +61,10 @@ settings.tk-nuke-writenode.shot:
     proxy_render_template:
     publish_template: nuke_shot_render_pub_exr
     render_template: nuke_shot_render_exr
-    settings: {}
+    settings: {datatype: 16 bit, compression: PIZ}
     tank_type: Rendered Image
     tile_color: []
-    promote_write_knobs: [datatype, compression]
+    promote_write_knobs: []
   - file_type: exr
     name: Element Exr
     proxy_publish_template:

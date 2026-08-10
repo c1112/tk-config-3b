@@ -44,11 +44,7 @@ keys:
         type: int
     version:
         type: int
-        format_spec: "03"
-    version_four:
-       type: int
-       format_spec: "04"
-       alias: version
+        format_spec: "04"
     timestamp:
         type: str
     width:
@@ -465,9 +461,9 @@ paths:
         definition: '@shot_root/publish/elements/{task_name}/{Shot}_{task_name}_{nuke.output}_v{version}/{width}x{height}/{Shot}_{task_name}_{nuke.output}_v{version}.{SEQ}.jpg'
     ## COMP EXR ##
     nuke_shot_render_exr:
-        definition: '@shot_render_area_nuke/{task_name}/{Shot}_{task_name}_v{version}/{width}x{height}/{Shot}_{task_name}_v{version}.{SEQ}.exr'
+        definition: '@shot_render_area_nuke/{task_name}/{Shot}_{task_name}_INH_v{version}/{width}x{height}/{Shot}_{task_name}_INH_v{version}.{SEQ}.exr'
     nuke_shot_render_pub_exr:
-        definition: '@shot_root/publish/elements/{task_name}/{Shot}_{task_name}_v{version}/{width}x{height}/{Shot}_{task_name}_v{version}.{SEQ}.exr'
+        definition: '@shot_root/publish/elements/{task_name}/{Shot}_{task_name}_INH_v{version}/{width}x{height}/{Shot}_{task_name}_INH_v{version}.{SEQ}.exr'
     ## ELEMENT EXR ##
     nuke_shot_render_element_exr:
         definition: '@shot_render_area_nuke/{task_name}/{Shot}_{task_name}_{nuke.output}_v{version}/{width}x{height}/{Shot}_{task_name}_{nuke.output}_v{version}.{SEQ}.exr'
