@@ -20,7 +20,8 @@ includes:
 - ./tk-multi-shotgunpanel.yml
 - ./tk-multi-snapshot.yml
 - ./tk-multi-workfiles2.yml
-- ./tk-multi-breakdown.yml
+- ./tk-multi-breakdown2.yml
+- ./tk-multi-data-validation.yml
 - ./tk-multi-setframerange.yml
 - ./tk-multi-shotgunpanel.yml
 
@@ -44,7 +45,11 @@ settings.tk-blender.asset_step:
   apps:
     tk-multi-about:
       location: "@apps.tk-multi-about.location"
-    tk-multi-breakdown: "@settings.tk-multi-breakdown.blender"
+    tk-multi-breakdown:
+      display_name: "Legacy Breakdown"
+      location: "@apps.tk-multi-breakdown.location"
+    tk-multi-breakdown2: "@settings.tk-multi-breakdown2.blender"
+    tk-multi-data-validation: "@settings.tk-multi-data-validation.blender.asset_step"
     tk-multi-loader2: "@settings.tk-multi-loader2.blender"
     tk-multi-publish2: "@settings.tk-multi-publish2.blender.asset_step"
     tk-multi-screeningroom: "@settings.tk-multi-screeningroom.rv"
@@ -103,7 +108,11 @@ settings.tk-blender.shot_step:
   apps:
     tk-multi-about:
       location: "@apps.tk-multi-about.location"
-    tk-multi-breakdown: "@settings.tk-multi-breakdown.blender"
+    tk-multi-breakdown:
+      display_name: "Legacy Breakdown"
+      location: "@apps.tk-multi-breakdown.location"
+    tk-multi-breakdown2: "@settings.tk-multi-breakdown2.blender"
+    tk-multi-data-validation: "@settings.tk-multi-data-validation.blender.shot_step"
     tk-multi-setframerange_cuts: "@settings.tk-multi-setframerange.blender_cuts"
     tk-multi-setframerange_handles: "@settings.tk-multi-setframerange.blender_handles"
     tk-multi-loader2: "@settings.tk-multi-loader2.blender"

@@ -15,17 +15,16 @@
 ################################################################################
 
 # Mari
-path.linux.mari: "Mari4.6"
-path.mac.mari: "/Applications/Mari4.6v4/Mari4.6v4.app"
-path.windows.mari: C:\Program Files\Mari4.6v4\Bundle\bin\Mari4.6v4.exe
+path.linux.mari: "/usr/local/Mari7.5v2/mari"
+path.windows.mari: C:\Program Files\Mari7.5v2\Bundle\bin\Mari7.5v2.exe
 
 # Motionbuilder
-path.windows.motionbuilder: C:\Program Files\Autodesk\MotionBuilder 2020\bin\x64\motionbuilder.exe
+path.windows.motionbuilder: C:\Program Files\Autodesk\MotionBuilder 2027\bin\x64\motionbuilder.exe
 
 # Hiero
-path.linux.hiero: "Nuke12.1"
-path.mac.hiero: "/Applications/Nuke12.1v4/Hiero12.1v4.app"
-path.windows.hiero: C:\Program Files\Nuke12.1v4\Nuke12.1.exe
+path.linux.hiero: "/usr/local/Nuke17.0v1/Nuke17.0"
+path.mac.hiero: "/Applications/Nuke17.0v1/Hiero17.0v1.app"
+path.windows.hiero: C:\Program Files\Nuke17.0v1\Nuke17.0.exe
 
 # RV
 path.linux.rv: "rv"

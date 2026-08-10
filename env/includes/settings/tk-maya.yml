@@ -14,14 +14,16 @@
 includes:
 - ../app_locations.yml
 - ../engine_locations.yml
+- ./tk-multi-data-validation.yml
 - ./tk-multi-loader2.yml
 - ./tk-multi-publish2.yml
 - ./tk-multi-reviewsubmission.yml
 - ./tk-multi-screeningroom.yml
+- ./tk-multi-setframerange.yml
 - ./tk-multi-shotgunpanel.yml
 - ./tk-multi-snapshot.yml
-- ./tk-multi-setframerange.yml
 - ./tk-multi-workfiles2.yml
+- ./tk-multi-breakdown2.yml
 
 ################################################################################
 
@@ -44,7 +46,10 @@ settings.tk-maya.asset_step:
     tk-multi-about:
       location: "@apps.tk-multi-about.location"
     tk-multi-breakdown:
+      display_name: "Legacy Breakdown"
       location: "@apps.tk-multi-breakdown.location"
+    tk-multi-breakdown2: "@settings.tk-multi-breakdown2.maya"
+    tk-multi-data-validation: "@settings.tk-multi-data-validation.maya.asset_step"
     tk-multi-loader2: "@settings.tk-multi-loader2.maya"
     tk-multi-publish2: "@settings.tk-multi-publish2.maya.asset_step"
     tk-multi-screeningroom: "@settings.tk-multi-screeningroom.rv"
@@ -57,6 +62,7 @@ settings.tk-maya.asset_step:
   - {app_instance: tk-multi-snapshot, name: Snapshot...}
   - {app_instance: tk-multi-workfiles2, name: File Save...}
   - {app_instance: tk-multi-publish2, name: Publish...}
+  - {app_instance: tk-multi-breakdown2, name: Scene Breakdown...}
   template_project: asset_work_area_maya
   location: "@engines.tk-maya.location"
 
@@ -102,7 +108,10 @@ settings.tk-maya.shot_step:
     tk-multi-about:
       location: "@apps.tk-multi-about.location"
     tk-multi-breakdown:
+      display_name: "Legacy Breakdown"
       location: "@apps.tk-multi-breakdown.location"
+    tk-multi-breakdown2: "@settings.tk-multi-breakdown2.maya"
+    tk-multi-data-validation: "@settings.tk-multi-data-validation.maya.shot_step"
     tk-multi-setframerange_cuts: "@settings.tk-multi-setframerange.generic_cuts"
     tk-multi-setframerange_handles: "@settings.tk-multi-setframerange.generic_handles"
     tk-multi-loader2: "@settings.tk-multi-loader2.maya"
@@ -118,5 +127,6 @@ settings.tk-maya.shot_step:
   - {app_instance: tk-multi-snapshot, name: Snapshot...}
   - {app_instance: tk-multi-workfiles2, name: File Save...}
   - {app_instance: tk-multi-publish2, name: Publish...}
+  - {app_instance: tk-multi-breakdown2, name: Scene Breakdown...}
   template_project: shot_work_area_maya
   location: "@engines.tk-maya.location"

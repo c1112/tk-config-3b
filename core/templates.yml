@@ -297,6 +297,11 @@ paths:
         definition: '@shot_root/publish/photoshop'
     photoshop_shot_publish:
         definition: '@shot_root/publish/photoshop/{name}.v{version}.psd'
+    # The location of the published images
+    photoshop_shot_png_publish:
+        definition: '@shot_root/publish/photoshop/{name}.v{version}.png'
+    photoshop_shot_jpg_publish:
+        definition: '@shot_root/publish/photoshop/{name}.v{version}.jpg'
 
     ##########################################################################################
     # After Effects Shot Pipeline
@@ -546,6 +551,11 @@ paths:
         definition: '@asset_root/publish/photoshop'
     photoshop_asset_publish:
         definition: '@asset_root/publish/photoshop/{Asset}_{task_name}_v{version}.psd'
+    # The location of the published images
+    photoshop_asset_png_publish:
+        definition: '@asset_root/publish/photoshop/{name}.v{version}.png'
+    photoshop_asset_jpg_publish:
+        definition: '@asset_root/publish/photoshop/{name}.v{version}.jpg'
 
 
     ##########################################################################################
