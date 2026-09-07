@@ -148,6 +148,15 @@ keys:
         default: hip
         alias: extension
 
+    #nuke supports two extension types.
+    nuke_extension:
+        type: str
+        choices:
+            nk: Nuke Commercial (.nk)
+            nkind: Nuke Indie (.nkind)
+        default: nk
+        alias: extension
+
     #needed for Multi publishing out of workfiles
     abcset_name:
       type: str
@@ -441,13 +450,13 @@ paths:
         definition: '@shot_root/publish/nuke'
     # The location of WIP script files
     nuke_shot_work:
-        definition: '@shot_root/_2D/nuke/{Shot}_{task_name}_v{version}.nk'
+        definition: '@shot_root/_2D/nuke/{Shot}_{task_name}_v{version}.{nuke_extension}'
     # The location of backups of WIP files
     nuke_shot_snapshot:
-        definition: '@shot_root/_2D/nuke/snapshots/{Shot}_{task_name}_v{version}.{timestamp}.nk'
+        definition: '@shot_root/_2D/nuke/snapshots/{Shot}_{task_name}_v{version}.{timestamp}.{nuke_extension}'
     # The location of published nuke script files
     nuke_shot_publish:
-        definition: '@shot_root/publish/nuke/{Shot}_{task_name}_v{version}.nk'
+        definition: '@shot_root/publish/nuke/{Shot}_{task_name}_v{version}.{nuke_extension}'
     # write node outputs
     ## DPX ##
     nuke_shot_render_dpx:
@@ -712,13 +721,13 @@ paths:
         definition: '@asset_root/resources/review/quickdaily/{Asset}_{task_name}_{iteration}.mov'
     # The location of WIP script files
     nuke_asset_work:
-        definition: '@asset_root/_2D/nuke/{Asset}_{task_name}_v{version}.nk'
+        definition: '@asset_root/_2D/nuke/{Asset}_{task_name}_v{version}.{nuke_extension}'
     # The location of backups of WIP files
     nuke_asset_snapshot:
-        definition: '@asset_root/_2D/nuke/snapshots/{Asset}_{task_name}_v{version}.{timestamp}.nk'
+        definition: '@asset_root/_2D/nuke/snapshots/{Asset}_{task_name}_v{version}.{timestamp}.{nuke_extension}'
     # The location of published nuke script files
     nuke_asset_publish:
-        definition: '@asset_root/publish/nuke/{Asset}_{task_name}_v{version}.nk'
+        definition: '@asset_root/publish/nuke/{Asset}_{task_name}_v{version}.{nuke_extension}'
 
 
     ##########################################################################################
